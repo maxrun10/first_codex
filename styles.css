@@ -1,0 +1,95 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --surface: #111827;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #1e293b, #020617 70%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  padding: 1rem;
+}
+
+.phone-shell {
+  width: min(100%, 390px);
+  min-height: 844px;
+  background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+  border-radius: 38px;
+  border: 1px solid #334155;
+  box-shadow: 0 30px 50px rgb(0 0 0 / 40%);
+  padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+  overflow: hidden;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.top-bar h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text);
+}
+
+.status {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.hero-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-label {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  background: rgb(15 23 42 / 80%);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgb(255 255 255 / 18%);
+}
+
+@media (max-height: 760px) {
+  .phone-shell {
+    min-height: auto;
+  }
+}
